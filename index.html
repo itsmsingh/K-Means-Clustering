@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive K-Means Clustering</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Interactive K-Means Clustering</h1>
+    <nav>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#visualization">Visualization</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="overview">
+    <h2>What is K-Means Clustering?</h2>
+    <p>K-Means is an unsupervised machine learning algorithm that partitions data into K distinct clusters based on similarity.</p>
+    <h3>Key Steps:</h3>
+    <ol>
+      <li>Initialization: Randomly select K centroids.</li>
+      <li>Assignment: Assign each data point to the nearest centroid.</li>
+      <li>Update: Calculate new centroids as the mean of assigned points.</li>
+      <li>Repeat: Continue until centroids no longer change.</li>
+    </ol>
+    <h3>Advantages:</h3>
+    <ul>
+      <li>Efficient and fast for large datasets.</li>
+      <li>Simple and intuitive.</li>
+      <li>Works well with spherical clusters of similar size.</li>
+    </ul>
+    <h3>Disadvantages:</h3>
+    <ul>
+      <li>Requires choosing K clusters beforehand.</li>
+      <li>Sensitive to initial centroid selection.</li>
+      <li>Struggles with outliers and non-spherical clusters.</li>
+    </ul>
+  </section>
+
+  <section id="visualization">
+    <h2>Interactive Visualization</h2>
+    <div class="canvas-container">
+      <div>
+        <h3>Before Clustering</h3>
+        <canvas id="beforeCanvas" width="400" height="400"></canvas>
+      </div>
+      <div>
+        <h3>After Clustering</h3>
+        <canvas id="afterCanvas" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="controls">
+      <label for="kValue">Number of Clusters (K):</label>
+      <input type="number" id="kValue" min="1" max="10" value="3">
+      <label for="dataPoints">Number of Data Points:</label>
+      <input type="number" id="dataPoints" min="10" max="100" value="50">
+      <button id="runButton">Run K-Means</button>
+    </div>
+  </section>
+
+  <section id="applications">
+    <h2>Real-World Applications</h2>
+    <p>Here are some real-world examples of K-Means clustering applications:</p>
+    <ul>
+      <li><strong>Customer Segmentation:</strong> Companies use K-Means to group customers based on purchasing behavior, demographics, or interests, allowing for targeted marketing and personalized services.</li>
+      <li><strong>Image Compression:</strong> K-Means is used to reduce the number of colors in an image by grouping similar colors together, which helps in compressing image files while maintaining quality.</li>
+      <li><strong>Anomaly Detection:</strong> K-Means helps identify outliers by detecting data points that do not fit well into any cluster, making it useful in fraud detection and network security.</li>
+      <li><strong>Document Clustering:</strong> K-Means can group similar documents or text based on content, which is useful in organizing large datasets, such as news articles or research papers.</li>
+      <li><strong>Market Basket Analysis:</strong> In retail, K-Means can group items often purchased together, helping businesses with inventory management and promotional strategies.</li>
+      <li><strong>Healthcare:</strong> K-Means is used in medical research to cluster patients with similar health conditions or symptoms, aiding in diagnosis and treatment plans.</li>
+      <li><strong>Geographical Clustering:</strong> It helps group locations based on factors like population, climate, or crime rates for urban planning and resource allocation.</li>
+    </ul>
+  </section>
+
+  <section id="quiz">
+    <h2>Test Your Knowledge</h2>
+    <div class="quiz-question">
+      <p>1. What is the first step in the K-Means algorithm?</p>
+      <input type="radio" name="q1" value="a"> Initialization<br>
+      <input type="radio" name="q1" value="b"> Assignment<br>
+      <input type="radio" name="q1" value="c"> Update<br>
+      <span id="q1Result"></span>
+    </div>
+    <div class="quiz-question">
+      <p>2. Which of the following is a disadvantage of K-Means?</p>
+      <input type="radio" name="q2" value="a"> Requires choosing K beforehand<br>
+      <input type="radio" name="q2" value="b"> Works well with non-spherical clusters<br>
+      <input type="radio" name="q2" value="c"> Handles outliers effectively<br>
+      <span id="q2Result"></span>
+    </div>
+    <div class="quiz-question">
+      <p>3. Which application uses K-Means for grouping similar colors?</p>
+      <input type="radio" name="q3" value="a"> Customer Segmentation<br>
+      <input type="radio" name="q3" value="b"> Image Compression<br>
+      <input type="radio" name="q3" value="c"> Anomaly Detection<br>
+      <span id="q3Result"></span>
+    </div>
+    <button id="submitQuiz">Submit</button>
+  </section>
+
+  <section id="resources">
+    <h2>Additional Resources</h2>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/K-means_clustering" target="_blank">Wikipedia: K-Means Clustering</a></li>
+      <li><a href="https://scikit-learn.org/stable/modules/clustering.html#k-means" target="_blank">Scikit-Learn Documentation</a></li>
+      <li><a href="https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a" target="_blank">Towards Data Science: K-Means</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <h3>Key Takeaways</h3>
+    <p>K-Means is a powerful clustering algorithm with applications in various fields. Understanding its strengths and limitations is key to using it effectively.</p>
+    <h3>Features Summary</h3>
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Interactive Visualization</td>
+        <td>Dynamic clustering visualization with user inputs.</td>
+      </tr>
+      <tr>
+        <td>Quiz</td>
+        <td>Test your knowledge with instant feedback.</td>
+      </tr>
+      <tr>
+        <td>Responsive Design</td>
+        <td>Optimized for both desktop and mobile.</td>
+      </tr>
+    </table>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
